@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ai-tianjin-station",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3007,
+      "cwd": "/Users/USER/ai-tianjin-station"
+    }
+  ]
+}

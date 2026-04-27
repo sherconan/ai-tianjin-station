@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-paper text-ink font-serif;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(184, 151, 100, 0.08), transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(192, 57, 43, 0.05), transparent 50%);
+    background-attachment: fixed;
+  }
+  ::selection { background: #c0392b; color: #faf3e0; }
+}
+
+@layer components {
+  .stamp {
+    @apply inline-flex items-center justify-center font-serif font-bold tracking-widest;
+    border: 2px solid currentColor;
+    padding: 4px 10px;
+    transform: rotate(-3deg);
+    background: rgba(255, 255, 255, 0.0);
+    text-shadow: 0 0 0.5px currentColor;
+  }
+  .stamp-round {
+    @apply rounded-full px-3 py-2 text-xs;
+    border: 1.5px solid currentColor;
+    transform: rotate(-6deg);
+  }
+  .archive-card {
+    @apply bg-paper-soft border border-gold/30 rounded-archive shadow-archive;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent 0,
+        transparent 23px,
+        rgba(184, 151, 100, 0.06) 23px,
+        rgba(184, 151, 100, 0.06) 24px
+      );
+  }
+  .prose-archive {
+    @apply text-ink leading-loose;
+  }
+  .prose-archive h1 { @apply text-3xl font-bold mt-8 mb-4 border-b-2 border-seal pb-2; }
+  .prose-archive h2 { @apply text-2xl font-bold mt-8 mb-3 text-seal; }
+  .prose-archive h3 { @apply text-xl font-bold mt-6 mb-2 text-ink; }
+  .prose-archive p { @apply mb-4 text-base; }
+  .prose-archive ul { @apply list-disc list-outside ml-6 mb-4 space-y-1; }
+  .prose-archive ol { @apply list-decimal list-outside ml-6 mb-4 space-y-1; }
+  .prose-archive blockquote { @apply border-l-4 border-seal pl-4 my-4 italic text-ink-soft bg-paper-deep/30 py-2; }
+  .prose-archive code { @apply font-mono bg-paper-deep px-1 py-0.5 text-sm rounded; }
+  .prose-archive pre { @apply bg-ink text-paper p-4 rounded-archive overflow-x-auto my-4 text-sm; }
+  .prose-archive pre code { @apply bg-transparent text-paper p-0; }
+  .prose-archive table { @apply w-full border-collapse my-4; }
+  .prose-archive th, .prose-archive td { @apply border border-gold/40 px-3 py-2 text-sm; }
+  .prose-archive th { @apply bg-paper-deep font-bold; }
+  .prose-archive img { @apply rounded-archive border border-gold/30 my-4 mx-auto; }
+  .prose-archive a { @apply text-seal underline decoration-seal/40 underline-offset-2 hover:decoration-seal; }
+}
+
+.crosshair-bg {
+  background-image:
+    linear-gradient(rgba(192, 57, 43, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192, 57, 43, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
